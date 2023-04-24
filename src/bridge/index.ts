@@ -331,9 +331,6 @@ export class Bridge {
     // Get web3Provider
     let web3Provider = <Web3Provider>signer.provider
     web3Provider.provider
-    if (!web3Provider || !(web3Provider instanceof Web3Provider)) {
-      throw new Error('Orbiter bridge transfer failed: Invalid signer.provider')
-    }
 
     const amounts = await this.getAmounts(token, fromChain, toChain, amountHm)
     const transferOptions: TransactionTransferOptions = {
